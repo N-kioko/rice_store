@@ -11,6 +11,7 @@ app_ui= ui.page_fluid(
     ui.layout_columns(
         ui.card(
         ui.h3("Pishori Rice"),
+        ui.img(src="field Image.JPG", style="width: 100%; max-width: 300px;"),
         ui.p(
             "Pishori rice is a fragrant, long-grain rice grown in East Africa. "
             "It is known for its aroma, fluffy texture, and is often used for special occasions. "
