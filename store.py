@@ -9,6 +9,14 @@ df=pd.read_csv("pishori.csv")
 app_ui= ui.page_fluid(
     ui.h2( 'Pishori Pride' ),
     ui.layout_columns(
+        ui.card(
+        ui.h3("Pishori Rice"),
+        ui.p(
+            "Pishori rice is a fragrant, long-grain rice grown in East Africa. "
+            "It is known for its aroma, fluffy texture, and is often used for special occasions. "
+            "Rich in nutrients, it cooks beautifully and is ideal for pilau or plain steamed rice."
+        )
+    ),
         ui.card(ui.h4('Available Rice'),
                 ui.output_table('rice_table')
                 ),#end of card
