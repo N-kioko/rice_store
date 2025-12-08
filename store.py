@@ -1,8 +1,10 @@
 from shiny import App, render, ui, reactive
 import pandas as pd
+from pathlib import Path
 
 # load the data
 df=pd.read_csv("pishori.csv")
+www_dir = Path(__file__).parent / "www"
 
 ### define ui
 
@@ -11,7 +13,7 @@ app_ui= ui.page_fluid(
     ui.layout_columns(
         ui.card(
         ui.h3("Pishori Rice"),
-        ui.img(src="pic_1.png", style="width: 100%; max-width: 300px;"),
+        ui.img(src="pic_1.png", height="200px"),
         ui.p("Pishori rice is a fragrant, long-grain rice grown in East Africa. "
             "It is known for its aroma, fluffy texture, and is often used for special occasions. "
             "Rich in nutrients, it cooks beautifully and is ideal for pilau or plain steamed rice.")
@@ -27,8 +29,9 @@ app_ui= ui.page_fluid(
                ui.h4('Total Price:'),
                ui.output_text('total')
            )   #end of card
-
+           
     ),#end of layout columns
+
 )##end of fluid page
 
 ###define server
