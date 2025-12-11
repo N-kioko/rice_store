@@ -4,6 +4,7 @@ from pathlib import Path
 
 # load the data
 df=pd.read_csv("pishori.csv")
+df["Name_Clean"] = df["Name"].str.strip().str.lower()  # normalize once
 www_dir = Path(__file__).parent / "www"
 
 ### define ui
@@ -45,7 +46,6 @@ def server(input,output, session):
     def selected_price():
         #normalize input
         product=input.product().strip().lower()
-        df['Name_Clean']=df['Name'].str.strip().str.lower()
         row= df[df['Name_Clean']==product]
         if row.empty:
             return 0
@@ -63,4 +63,4 @@ def server(input,output, session):
         return f"KES {total_cost}"
 
 ### run the app
-app = App(app_ui, server)
+app = App(app_ui, server, static_assets=www_dir)
