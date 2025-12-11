@@ -17,7 +17,8 @@ www_dir = Path(__file__).parent / "www"
 ### define ui
 
 app_ui= ui.page_fluid(
-    ui.h2( 'Pishori Pride' ),
+    ui.h2('Pishori Pride', style="text-align: center; margin-bottom: 30px;background-color: #8B4513;  /* brown color */",
+       ),
     ui.layout_columns(
         ui.card(
         ui.h3("Pishori Rice"),
@@ -39,6 +40,23 @@ app_ui= ui.page_fluid(
             ui.output_text('shipping_cost'))   #end of card
            
     ),#end of layout columns
+## extra contact card
+    ui.card(
+        ui.h3("Reach Pishori Pride Kenya"),
+        ui.h4("Phone: +254741462886"),
+        ui.h4("Address: Kerugoya Twn, Kirinyaga"),
+        ui.h4("Email: pishoripride@gmail.com"),
+        style="""
+        margin-top: 30px; 
+        background-color: #8B4513;  /* brown color */
+        color: white;               /* text color white for readability */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    """
+    )
+
+   
 
 )##end of fluid page
 
