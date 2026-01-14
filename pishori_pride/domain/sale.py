@@ -1,4 +1,4 @@
-from product import Product
+from .product import Product
 class Sale:
     """ Represents a sale transaction in the store."""
     def __init__(self, product: Product, quantity: int):
