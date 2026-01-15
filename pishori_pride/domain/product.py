@@ -34,10 +34,6 @@ class Product:
         """ Returns the available stock of the product."""
         return self._stock
     
-    def restock(self, quantity: int):
-        """ Increases the stock of the product when new stock arrives."""
-        self.stock += quantity 
-
     ##internal method to apply sale
     def _apply_sale(self,quantity:int)->float:
         """Applies a sale by reducing the stock and calculating the total price for the given quantity."""
