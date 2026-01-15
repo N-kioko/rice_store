@@ -57,3 +57,14 @@ class Inventory:
                 print(f"{p.name} | Stock: {p.stock}")
         else:
             print("All products are sufficiently stocked.")
+
+    def process_cart(self, cart):
+        total = 0
+        for sku, qty in cart.items.items():
+            product = self.products[sku]
+            if qty > product.stock:
+                raise ValueError(f"Insufficient stock for {product.name}")
+            sale = Sale(product, qty)
+            total += sale.process_sale()
+        cart.clear_cart()
+        return total

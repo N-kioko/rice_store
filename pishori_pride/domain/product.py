@@ -27,6 +27,14 @@ class Product:
         if new_price < 0:
             raise ValueError("Price cannot be negative.")
         self._price = new_price
+    
+    def total_cost(self, quantity: int) -> float:
+        """
+        Calculates total cost for the given quantity based on unit price.
+        """
+        if quantity <= 0:
+            raise ValueError("Quantity must be greater than zero")
+        return self.price * quantity
 
     ## protect the stock attributes
     @property
